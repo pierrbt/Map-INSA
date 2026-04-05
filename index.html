@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!doctype html>
+<html lang="fr" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary Meta Tags -->
     <title>Map-INSA</title>
     <meta name="theme-color" content="#ffc83b" />
     <meta
@@ -13,7 +12,6 @@
       content="Find your way around the INSA Toulouse campus."
     />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content="Map-INSA" />
     <meta property="og:title" content="Map-INSA" />
     <meta property="og:type" content="website" />
@@ -30,12 +28,8 @@
       property="og:description"
       content="Find your way around the INSA Toulouse campus."
     />
-
-    <link rel="stylesheet" href="./css/maptalks.min.css" />
-    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <!-- Search -->
     <div id="searchContainer">
       <div id="search">
         <span id="searchIcon">
@@ -57,21 +51,17 @@
           type="text"
           placeholder="Lancer une recherche"
           id="searchInput"
+          autocomplete="off"
         />
       </div>
-
-      <!-- Suggestions -->
       <ul id="suggestions"></ul>
     </div>
 
-    <!-- Controls -->
     <div id="controls">
       <div>
-        <!-- Reset -->
         <button
           id="resetControl"
           class="control"
-          onclick="reset()"
           aria-label="Reset to default view"
         >
           <svg
@@ -89,9 +79,8 @@
           </svg>
         </button>
 
-        <!-- Zoom In/Out -->
         <div id="zoomControls">
-          <button class="control" onclick="zoomIn()" aria-label="Zoom in">
+          <button id="zoomInControl" class="control" aria-label="Zoom in">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -106,7 +95,7 @@
               />
             </svg>
           </button>
-          <button class="control" onclick="zoomOut()" aria-label="Zoom out">
+          <button id="zoomOutControl" class="control" aria-label="Zoom out">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -123,13 +112,7 @@
           </button>
         </div>
 
-        <!-- About -->
-        <button
-          id="aboutControl"
-          class="control"
-          onclick="showInfoModal()"
-          aria-label="About"
-        >
+        <button id="aboutControl" class="control" aria-label="About">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -147,12 +130,8 @@
       </div>
     </div>
 
-    <!-- About Modal -->
     <div id="modalScreen">
-      <!-- Modal Overlay -->
       <div id="modalOverlay"></div>
-
-      <!-- Modal -->
       <div id="modalContainer">
         <div id="modal">
           <div id="modalBody">
@@ -169,15 +148,7 @@
     </div>
 
     <div id="map"></div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.138.3/three.min.js"
-      integrity="sha512-AULygUpzXeEwzx9VCz35G2O8dW4DZzBlj7+kiVTgWTAKAEbxAMKhr53ze2w1W1g48H5mkbUDj8aQ0F+2LOxblQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./js/maptalks.min.js"></script>
-    <script src="./js/maptalks.three.min.js"></script>
-    <script src="./js/buildings.js"></script>
-    <script src="./js/script.js"></script>
+
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
